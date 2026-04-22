@@ -1,0 +1,9 @@
+{
+    "name":  "br.com.roberio.cert_reader",
+    "description":  "Leitor de Certificados Digitais (ICP-Brasil) - native host",
+    "path":  "C:\\Users\\Roberio\\projetos_PY\\leitor_certificado\\native_host\\cert_host.exe",
+    "type":  "stdio",
+    "allowed_origins":  [
+                            "chrome-extension://dkohgecpdfcjjeebcldiffdbgpbbjmim/"
+                        ]
+}

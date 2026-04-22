@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Leitor de Certificados</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <!-- ==================================================================
+         VIEW 1 – LISTA DE CERTIFICADOS
+         ================================================================== -->
+    <section id="view-lista" class="view">
+      <header class="topo">
+        <h1 class="titulo">Certificados</h1>
+        <div class="topo-acoes">
+          <div class="menu-wrapper">
+            <button
+              id="btn-menu"
+              class="icon-btn"
+              type="button"
+              title="Filtrar repositórios"
+              aria-label="Filtrar repositórios"
+            >
+              <svg viewBox="0 0 24 24" class="icon">
+                <circle cx="12" cy="5" r="1.8" />
+                <circle cx="12" cy="12" r="1.8" />
+                <circle cx="12" cy="19" r="1.8" />
+              </svg>
+            </button>
+            <div id="menu-repos" class="menu-dropdown" hidden>
+              <div class="menu-titulo">Repositórios</div>
+              <label class="menu-item">
+                <input type="checkbox" data-store="MY" checked />
+                <span>Pessoal (e-CPF / e-CNPJ)</span>
+              </label>
+              <label class="menu-item">
+                <input type="checkbox" data-store="CA" />
+                <span>Autoridades Intermediárias</span>
+              </label>
+              <label class="menu-item">
+                <input type="checkbox" data-store="ROOT" />
+                <span>Autoridades Raiz Confiáveis</span>
+              </label>
+            </div>
+          </div>
+          <button
+            id="btn-atualizar"
+            class="icon-btn"
+            type="button"
+            title="Atualizar"
+            aria-label="Atualizar"
+          >
+            <svg viewBox="0 0 24 24" class="icon">
+              <path
+                d="M12 4V1L7.5 5.5 12 10V7a5 5 0 015 5c0 .93-.25 1.8-.7 2.55l1.47 1.47A7 7 0 0019 12 7 7 0 0012 4zm-5.28 5.98L5.25 8.5A7 7 0 005 12a7 7 0 007 7v3l4.5-4.5L12 13v3a5 5 0 01-5-5c0-.93.25-1.8.72-2.02z"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="busca-wrapper">
+        <svg viewBox="0 0 24 24" class="icon-busca">
+          <path
+            d="M10 2a8 8 0 015.3 13.95l5.38 5.37-1.42 1.42-5.37-5.38A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"
+          />
+        </svg>
+        <input
+          id="busca"
+          type="search"
+          placeholder="Pesquisar certificados…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
+
+      <div class="lista-wrapper">
+        <table class="lista">
+          <thead>
+            <tr>
+              <th>Nome do certificado</th>
+              <th class="col-data">Validade</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+        <div id="lista-vazia" class="vazio" hidden>
+          Nenhum certificado encontrado.
+        </div>
+      </div>
+
+      <div class="rodape-acoes">
+        <button id="btn-excluir" class="btn btn-perigo" type="button" disabled>
+          Excluir
+        </button>
+        <button id="btn-detalhes" class="btn btn-primario" type="button" disabled>
+          Detalhes
+        </button>
+      </div>
+
+      <footer class="rodape">
+        <span id="status">Pronto.</span>
+      </footer>
+    </section>
+
+    <!-- ==================================================================
+         VIEW 2 – DETALHES DO CERTIFICADO
+         ================================================================== -->
+    <section id="view-detalhes" class="view" hidden>
+      <header class="topo topo-detalhes">
+        <button
+          id="btn-voltar"
+          class="icon-btn"
+          type="button"
+          title="Voltar"
+          aria-label="Voltar"
+        >
+          <svg viewBox="0 0 24 24" class="icon">
+            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
+          </svg>
+        </button>
+        <h1 class="titulo">Detalhes</h1>
+        <button
+          id="btn-fechar"
+          class="icon-btn"
+          type="button"
+          title="Fechar"
+          aria-label="Fechar"
+        >
+          <svg viewBox="0 0 24 24" class="icon">
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+          </svg>
+        </button>
+      </header>
+
+      <div class="detalhes-cabecalho">
+        <div class="detalhes-titular" id="det-titular">—</div>
+        <div class="detalhes-meta">
+          <span class="badge" id="det-tipo">—</span>
+          <span class="badge" id="det-situacao">—</span>
+        </div>
+      </div>
+
+      <div class="detalhes-corpo" id="det-corpo"></div>
+
+      <div class="rodape-acoes">
+        <button id="btn-excluir-det" class="btn btn-perigo btn-bloco" type="button">
+          Excluir certificado
+        </button>
+      </div>
+    </section>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

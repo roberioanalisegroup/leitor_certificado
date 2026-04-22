@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Leitor de Certificados Digitais",
+  "description": "Lista, inspeciona e exclui certificados digitais (ICP-Brasil) instalados no Windows.",
+  "version": "1.1.0",
+  "action": {
+    "default_title": "Leitor de Certificados",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "nativeMessaging"
+  ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvW4I9UV0cmvASZlBW8L1CGpqyxJ9XMYFlS3jOUP1ITWb+McKReps9mO04dwymOvlv+jutnN9sMVbq0aod/lKMa3+YwrR2TpZqaIzBUT5+uinS/SH6Me+ICsVfbDBkD3yVKFth059O1MEasm8eIqkAW4GsJdwaobrBDXiaTclW6zqNzq39msa663vRU4MwqKa2EJ4bdbXHcC92Pwi3XjV96nYAJKd1+YdYeL9Z5v44DQH2ymdDqJi1dm54CxmYemu6d7XkPMqewV0LSM2b8WK1qoKv2NWlf0yFssG0bD8N1+cEdCNxYslzALvom+lPY7DpSeqsnu+AOBOY9mL9NSWzwIDAQAB"
+}
